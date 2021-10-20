@@ -173,11 +173,11 @@ async def read_own_items(current_user: User = Depends(get_current_active_user)):
 #       return{'You are in the root of the data'}
 
 @app.get('/menu')
-async def read_all_menu():
+async def read_all_menu(token: str = Depends(oauth2_scheme)):
       return data
 
 @app.get('/menu/{item_id}')
-async def read_menu(item_id: int):
+async def read_menu(item_id: int, token: str = Depends(oauth2_scheme)):
       for menu_item in data['menu']:
             if menu_item['id'] == item_id:
                   return menu_item
