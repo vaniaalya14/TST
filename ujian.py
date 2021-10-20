@@ -168,9 +168,9 @@ async def read_own_items(current_user: User = Depends(get_current_active_user)):
 #     return pwd_context.hash(password)
 
 # Menu
-@app.get('/')
-def root():
-      return{'You are in the root of the data'}
+# @app.get('/')
+# def root():
+#       return{'You are in the root of the data'}
 
 @app.get('/menu')
 async def read_all_menu():
